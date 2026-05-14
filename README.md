@@ -45,7 +45,7 @@ php -S localhost:8000
 
 Then open http://localhost:8000
 
-## Screenshots
+## Screenshot
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/faisaltheparttimecoder/Paycheck-Passport/refs/heads/images/images/screenshot.png" alt="Screenshot 1" />
