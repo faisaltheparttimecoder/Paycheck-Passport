@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paycheck Passport – Take-Home Salary Comparison</title>
+  <meta name="description" content="Compare your take-home salary across 30+ countries. Free, private, no signup required.">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1 class="logo">Paycheck Passport</h1>
+      <p class="tagline">Roughly, how much would I take home if I moved to ___?</p>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">◐</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="input-section">
+      <form id="salary-form" class="salary-form">
+        <div class="form-row">
+          <div class="form-group salary-group">
+            <label for="salary">Annual Salary</label>
+            <div class="input-with-currency">
+              <input 
+                type="number" 
+                id="salary" 
+                name="salary" 
+                placeholder="50000" 
+                min="0" 
+                step="1000"
+                required
+              >
+              <select id="currency" name="currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP" selected>GBP</option>
+                <option value="CHF">CHF</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="JPY">JPY</option>
+                <option value="SGD">SGD</option>
+                <option value="INR">INR</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row country-selectors">
+          <div class="form-group">
+            <label for="from-country">From</label>
+            <select id="from-country" name="from"></select>
+          </div>
+          <span class="arrow">→</span>
+          <div class="form-group compare-group">
+            <label>Compare to (up to 4)</label>
+            <div class="compare-countries">
+              <select id="to-country-1" name="to1"></select>
+              <select id="to-country-2" name="to2">
+                <option value="">+ Add</option>
+              </select>
+              <select id="to-country-3" name="to3">
+                <option value="">+ Add</option>
+              </select>
+              <select id="to-country-4" name="to4">
+                <option value="">+ Add</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="region-selectors" class="region-selectors hidden">
+          <!-- Dynamically populated for US states, Canadian provinces, etc. -->
+        </div>
+      </form>
+    </section>
+
+    <section id="results" class="results-section hidden">
+      <div class="results-grid">
+        <!-- Result cards populated by JS -->
+      </div>
+    </section>
+
+    <section class="comparison-strip hidden" id="comparison-strip">
+      <!-- Visual comparison bar chart -->
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="disclaimer">
+        <strong>Not tax advice.</strong> These are estimates for a single filer with no dependents. 
+        Actual take-home depends on your specific circumstances. Always consult a qualified tax professional.
+      </p>
+      <p class="meta">
+        <span id="rates-updated">FX rates: —</span> · 
+        <a href="https://github.com/faisalali/PaycheckPassport" target="_blank" rel="noopener">Source</a>
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

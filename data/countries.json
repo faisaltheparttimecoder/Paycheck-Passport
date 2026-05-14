@@ -1,0 +1,802 @@
+{
+  "countries": [
+    {
+      "iso": "GB",
+      "name": "United Kingdom",
+      "flag": "🇬🇧",
+      "currency": "GBP",
+      "tier": 1,
+      "last_updated": "2024-04-06",
+      "source_url": "https://www.gov.uk/income-tax-rates",
+      "has_regions": false
+    },
+    {
+      "iso": "US",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "currency": "USD",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.irs.gov/filing/federal-income-tax-rates-and-brackets",
+      "has_regions": true,
+      "regions": [
+        { "code": "NONE", "name": "No State Tax" },
+        { "code": "CA", "name": "California" },
+        { "code": "NY", "name": "New York" },
+        { "code": "TX", "name": "Texas" },
+        { "code": "FL", "name": "Florida" },
+        { "code": "IL", "name": "Illinois" },
+        { "code": "PA", "name": "Pennsylvania" },
+        { "code": "WA", "name": "Washington" },
+        { "code": "MA", "name": "Massachusetts" },
+        { "code": "NJ", "name": "New Jersey" },
+        { "code": "CO", "name": "Colorado" },
+        { "code": "GA", "name": "Georgia" },
+        { "code": "NC", "name": "North Carolina" },
+        { "code": "VA", "name": "Virginia" },
+        { "code": "AZ", "name": "Arizona" },
+        { "code": "OH", "name": "Ohio" },
+        { "code": "MI", "name": "Michigan" },
+        { "code": "TN", "name": "Tennessee" },
+        { "code": "MD", "name": "Maryland" },
+        { "code": "NV", "name": "Nevada" }
+      ],
+      "default_region": "NY"
+    },
+    {
+      "iso": "DE",
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "currency": "EUR",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.bundesfinanzministerium.de/Web/EN/Issues/Taxation/taxation.html",
+      "has_regions": false
+    },
+    {
+      "iso": "FR",
+      "name": "France",
+      "flag": "🇫🇷",
+      "currency": "EUR",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.impots.gouv.fr/",
+      "has_regions": false
+    },
+    {
+      "iso": "NL",
+      "name": "Netherlands",
+      "flag": "🇳🇱",
+      "currency": "EUR",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.belastingdienst.nl/",
+      "has_regions": false
+    },
+    {
+      "iso": "IE",
+      "name": "Ireland",
+      "flag": "🇮🇪",
+      "currency": "EUR",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.revenue.ie/",
+      "has_regions": false
+    },
+    {
+      "iso": "ES",
+      "name": "Spain",
+      "flag": "🇪🇸",
+      "currency": "EUR",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://sede.agenciatributaria.gob.es/",
+      "has_regions": false
+    },
+    {
+      "iso": "IT",
+      "name": "Italy",
+      "flag": "🇮🇹",
+      "currency": "EUR",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.agenziaentrate.gov.it/",
+      "has_regions": false
+    },
+    {
+      "iso": "PT",
+      "name": "Portugal",
+      "flag": "🇵🇹",
+      "currency": "EUR",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.portaldasfinancas.gov.pt/",
+      "has_regions": false
+    },
+    {
+      "iso": "BE",
+      "name": "Belgium",
+      "flag": "🇧🇪",
+      "currency": "EUR",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://finance.belgium.be/",
+      "has_regions": false
+    },
+    {
+      "iso": "AT",
+      "name": "Austria",
+      "flag": "🇦🇹",
+      "currency": "EUR",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.bmf.gv.at/",
+      "has_regions": false
+    },
+    {
+      "iso": "CH",
+      "name": "Switzerland",
+      "flag": "🇨🇭",
+      "currency": "CHF",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.estv.admin.ch/",
+      "has_regions": true,
+      "regions": [
+        { "code": "ZH", "name": "Zurich" },
+        { "code": "GE", "name": "Geneva" },
+        { "code": "BS", "name": "Basel-Stadt" },
+        { "code": "VD", "name": "Vaud" },
+        { "code": "ZG", "name": "Zug" }
+      ],
+      "default_region": "ZH"
+    },
+    {
+      "iso": "SE",
+      "name": "Sweden",
+      "flag": "🇸🇪",
+      "currency": "SEK",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.skatteverket.se/",
+      "has_regions": false
+    },
+    {
+      "iso": "NO",
+      "name": "Norway",
+      "flag": "🇳🇴",
+      "currency": "NOK",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.skatteetaten.no/",
+      "has_regions": false
+    },
+    {
+      "iso": "DK",
+      "name": "Denmark",
+      "flag": "🇩🇰",
+      "currency": "DKK",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://skat.dk/",
+      "has_regions": false
+    },
+    {
+      "iso": "FI",
+      "name": "Finland",
+      "flag": "🇫🇮",
+      "currency": "EUR",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.vero.fi/",
+      "has_regions": false
+    },
+    {
+      "iso": "PL",
+      "name": "Poland",
+      "flag": "🇵🇱",
+      "currency": "PLN",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.podatki.gov.pl/",
+      "has_regions": false
+    },
+    {
+      "iso": "CZ",
+      "name": "Czechia",
+      "flag": "🇨🇿",
+      "currency": "CZK",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.financnisprava.cz/",
+      "has_regions": false
+    },
+    {
+      "iso": "CA",
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "currency": "CAD",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.canada.ca/en/revenue-agency.html",
+      "has_regions": true,
+      "regions": [
+        { "code": "ON", "name": "Ontario" },
+        { "code": "BC", "name": "British Columbia" },
+        { "code": "AB", "name": "Alberta" },
+        { "code": "QC", "name": "Quebec" }
+      ],
+      "default_region": "ON"
+    },
+    {
+      "iso": "AU",
+      "name": "Australia",
+      "flag": "🇦🇺",
+      "currency": "AUD",
+      "tier": 1,
+      "last_updated": "2024-07-01",
+      "source_url": "https://www.ato.gov.au/",
+      "has_regions": false
+    },
+    {
+      "iso": "NZ",
+      "name": "New Zealand",
+      "flag": "🇳🇿",
+      "currency": "NZD",
+      "tier": 1,
+      "last_updated": "2024-04-01",
+      "source_url": "https://www.ird.govt.nz/",
+      "has_regions": false
+    },
+    {
+      "iso": "SG",
+      "name": "Singapore",
+      "flag": "🇸🇬",
+      "currency": "SGD",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.iras.gov.sg/",
+      "has_regions": false
+    },
+    {
+      "iso": "HK",
+      "name": "Hong Kong",
+      "flag": "🇭🇰",
+      "currency": "HKD",
+      "tier": 1,
+      "last_updated": "2024-04-01",
+      "source_url": "https://www.ird.gov.hk/",
+      "has_regions": false
+    },
+    {
+      "iso": "JP",
+      "name": "Japan",
+      "flag": "🇯🇵",
+      "currency": "JPY",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.nta.go.jp/",
+      "has_regions": false
+    },
+    {
+      "iso": "AE",
+      "name": "UAE",
+      "flag": "🇦🇪",
+      "currency": "AED",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.mof.gov.ae/",
+      "has_regions": false
+    },
+    {
+      "iso": "SA",
+      "name": "Saudi Arabia",
+      "flag": "🇸🇦",
+      "currency": "SAR",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://zatca.gov.sa/",
+      "has_regions": false
+    },
+    {
+      "iso": "IN",
+      "name": "India",
+      "flag": "🇮🇳",
+      "currency": "INR",
+      "tier": 1,
+      "last_updated": "2024-04-01",
+      "source_url": "https://www.incometax.gov.in/",
+      "has_regions": false
+    },
+    {
+      "iso": "BR",
+      "name": "Brazil",
+      "flag": "🇧🇷",
+      "currency": "BRL",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.gov.br/receitafederal/",
+      "has_regions": false
+    },
+    {
+      "iso": "MX",
+      "name": "Mexico",
+      "flag": "🇲🇽",
+      "currency": "MXN",
+      "tier": 1,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.sat.gob.mx/",
+      "has_regions": false
+    },
+    {
+      "iso": "ZA",
+      "name": "South Africa",
+      "flag": "🇿🇦",
+      "currency": "ZAR",
+      "tier": 1,
+      "last_updated": "2024-03-01",
+      "source_url": "https://www.sars.gov.za/",
+      "has_regions": false
+    },
+    {
+      "iso": "AR",
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "currency": "ARS",
+      "tier": 2,
+      "estimated_rate": 0.35,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.afip.gob.ar/"
+    },
+    {
+      "iso": "CL",
+      "name": "Chile",
+      "flag": "🇨🇱",
+      "currency": "CLP",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.sii.cl/"
+    },
+    {
+      "iso": "CO",
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "currency": "COP",
+      "tier": 2,
+      "estimated_rate": 0.33,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.dian.gov.co/"
+    },
+    {
+      "iso": "MY",
+      "name": "Malaysia",
+      "flag": "🇲🇾",
+      "currency": "MYR",
+      "tier": 2,
+      "estimated_rate": 0.25,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.hasil.gov.my/"
+    },
+    {
+      "iso": "TH",
+      "name": "Thailand",
+      "flag": "🇹🇭",
+      "currency": "THB",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.rd.go.th/"
+    },
+    {
+      "iso": "ID",
+      "name": "Indonesia",
+      "flag": "🇮🇩",
+      "currency": "IDR",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.pajak.go.id/"
+    },
+    {
+      "iso": "PH",
+      "name": "Philippines",
+      "flag": "🇵🇭",
+      "currency": "PHP",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.bir.gov.ph/"
+    },
+    {
+      "iso": "VN",
+      "name": "Vietnam",
+      "flag": "🇻🇳",
+      "currency": "VND",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.gdt.gov.vn/"
+    },
+    {
+      "iso": "KR",
+      "name": "South Korea",
+      "flag": "🇰🇷",
+      "currency": "KRW",
+      "tier": 2,
+      "estimated_rate": 0.35,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.nts.go.kr/"
+    },
+    {
+      "iso": "TW",
+      "name": "Taiwan",
+      "flag": "🇹🇼",
+      "currency": "TWD",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.ntbt.gov.tw/"
+    },
+    {
+      "iso": "IL",
+      "name": "Israel",
+      "flag": "🇮🇱",
+      "currency": "ILS",
+      "tier": 2,
+      "estimated_rate": 0.40,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.gov.il/en/departments/israel_tax_authority"
+    },
+    {
+      "iso": "TR",
+      "name": "Turkey",
+      "flag": "🇹🇷",
+      "currency": "TRY",
+      "tier": 2,
+      "estimated_rate": 0.35,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.gib.gov.tr/"
+    },
+    {
+      "iso": "EG",
+      "name": "Egypt",
+      "flag": "🇪🇬",
+      "currency": "EGP",
+      "tier": 2,
+      "estimated_rate": 0.25,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.eta.gov.eg/"
+    },
+    {
+      "iso": "NG",
+      "name": "Nigeria",
+      "flag": "🇳🇬",
+      "currency": "NGN",
+      "tier": 2,
+      "estimated_rate": 0.24,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.firs.gov.ng/"
+    },
+    {
+      "iso": "KE",
+      "name": "Kenya",
+      "flag": "🇰🇪",
+      "currency": "KES",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.kra.go.ke/"
+    },
+    {
+      "iso": "GH",
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "currency": "GHS",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://gra.gov.gh/"
+    },
+    {
+      "iso": "RO",
+      "name": "Romania",
+      "flag": "🇷🇴",
+      "currency": "RON",
+      "tier": 2,
+      "estimated_rate": 0.25,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.anaf.ro/"
+    },
+    {
+      "iso": "HU",
+      "name": "Hungary",
+      "flag": "🇭🇺",
+      "currency": "HUF",
+      "tier": 2,
+      "estimated_rate": 0.33,
+      "last_updated": "2024-01-01",
+      "source_url": "https://nav.gov.hu/"
+    },
+    {
+      "iso": "GR",
+      "name": "Greece",
+      "flag": "🇬🇷",
+      "currency": "EUR",
+      "tier": 2,
+      "estimated_rate": 0.40,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.aade.gr/"
+    },
+    {
+      "iso": "RU",
+      "name": "Russia",
+      "flag": "🇷🇺",
+      "currency": "RUB",
+      "tier": 2,
+      "estimated_rate": 0.13,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.nalog.gov.ru/"
+    },
+    {
+      "iso": "UA",
+      "name": "Ukraine",
+      "flag": "🇺🇦",
+      "currency": "UAH",
+      "tier": 2,
+      "estimated_rate": 0.18,
+      "last_updated": "2024-01-01",
+      "source_url": "https://tax.gov.ua/"
+    },
+    {
+      "iso": "BG",
+      "name": "Bulgaria",
+      "flag": "🇧🇬",
+      "currency": "BGN",
+      "tier": 2,
+      "estimated_rate": 0.10,
+      "last_updated": "2024-01-01",
+      "source_url": "https://nra.bg/"
+    },
+    {
+      "iso": "HR",
+      "name": "Croatia",
+      "flag": "🇭🇷",
+      "currency": "EUR",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.porezna-uprava.hr/"
+    },
+    {
+      "iso": "SK",
+      "name": "Slovakia",
+      "flag": "🇸🇰",
+      "currency": "EUR",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.financnasprava.sk/"
+    },
+    {
+      "iso": "SI",
+      "name": "Slovenia",
+      "flag": "🇸🇮",
+      "currency": "EUR",
+      "tier": 2,
+      "estimated_rate": 0.40,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.fu.gov.si/"
+    },
+    {
+      "iso": "LT",
+      "name": "Lithuania",
+      "flag": "🇱🇹",
+      "currency": "EUR",
+      "tier": 2,
+      "estimated_rate": 0.32,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.vmi.lt/"
+    },
+    {
+      "iso": "LV",
+      "name": "Latvia",
+      "flag": "🇱🇻",
+      "currency": "EUR",
+      "tier": 2,
+      "estimated_rate": 0.31,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.vid.gov.lv/"
+    },
+    {
+      "iso": "EE",
+      "name": "Estonia",
+      "flag": "🇪🇪",
+      "currency": "EUR",
+      "tier": 2,
+      "estimated_rate": 0.20,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.emta.ee/"
+    },
+    {
+      "iso": "LU",
+      "name": "Luxembourg",
+      "flag": "🇱🇺",
+      "currency": "EUR",
+      "tier": 2,
+      "estimated_rate": 0.42,
+      "last_updated": "2024-01-01",
+      "source_url": "https://impotsdirects.public.lu/"
+    },
+    {
+      "iso": "MT",
+      "name": "Malta",
+      "flag": "🇲🇹",
+      "currency": "EUR",
+      "tier": 2,
+      "estimated_rate": 0.35,
+      "last_updated": "2024-01-01",
+      "source_url": "https://cfr.gov.mt/"
+    },
+    {
+      "iso": "CY",
+      "name": "Cyprus",
+      "flag": "🇨🇾",
+      "currency": "EUR",
+      "tier": 2,
+      "estimated_rate": 0.35,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.mof.gov.cy/tax/"
+    },
+    {
+      "iso": "IS",
+      "name": "Iceland",
+      "flag": "🇮🇸",
+      "currency": "ISK",
+      "tier": 2,
+      "estimated_rate": 0.46,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.rsk.is/"
+    },
+    {
+      "iso": "QA",
+      "name": "Qatar",
+      "flag": "🇶🇦",
+      "currency": "QAR",
+      "tier": 2,
+      "estimated_rate": 0.00,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.gta.gov.qa/"
+    },
+    {
+      "iso": "KW",
+      "name": "Kuwait",
+      "flag": "🇰🇼",
+      "currency": "KWD",
+      "tier": 2,
+      "estimated_rate": 0.00,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.mof.gov.kw/"
+    },
+    {
+      "iso": "BH",
+      "name": "Bahrain",
+      "flag": "🇧🇭",
+      "currency": "BHD",
+      "tier": 2,
+      "estimated_rate": 0.00,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.mof.gov.bh/"
+    },
+    {
+      "iso": "OM",
+      "name": "Oman",
+      "flag": "🇴🇲",
+      "currency": "OMR",
+      "tier": 2,
+      "estimated_rate": 0.00,
+      "last_updated": "2024-01-01",
+      "source_url": "https://tms.taxoman.gov.om/"
+    },
+    {
+      "iso": "PA",
+      "name": "Panama",
+      "flag": "🇵🇦",
+      "currency": "USD",
+      "tier": 2,
+      "estimated_rate": 0.25,
+      "last_updated": "2024-01-01",
+      "source_url": "https://dgi.mef.gob.pa/"
+    },
+    {
+      "iso": "CR",
+      "name": "Costa Rica",
+      "flag": "🇨🇷",
+      "currency": "CRC",
+      "tier": 2,
+      "estimated_rate": 0.25,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.hacienda.go.cr/"
+    },
+    {
+      "iso": "PE",
+      "name": "Peru",
+      "flag": "🇵🇪",
+      "currency": "PEN",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.sunat.gob.pe/"
+    },
+    {
+      "iso": "EC",
+      "name": "Ecuador",
+      "flag": "🇪🇨",
+      "currency": "USD",
+      "tier": 2,
+      "estimated_rate": 0.35,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.sri.gob.ec/"
+    },
+    {
+      "iso": "UY",
+      "name": "Uruguay",
+      "flag": "🇺🇾",
+      "currency": "UYU",
+      "tier": 2,
+      "estimated_rate": 0.36,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.dgi.gub.uy/"
+    },
+    {
+      "iso": "PK",
+      "name": "Pakistan",
+      "flag": "🇵🇰",
+      "currency": "PKR",
+      "tier": 2,
+      "estimated_rate": 0.35,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.fbr.gov.pk/"
+    },
+    {
+      "iso": "BD",
+      "name": "Bangladesh",
+      "flag": "🇧🇩",
+      "currency": "BDT",
+      "tier": 2,
+      "estimated_rate": 0.30,
+      "last_updated": "2024-01-01",
+      "source_url": "https://nbr.gov.bd/"
+    },
+    {
+      "iso": "LK",
+      "name": "Sri Lanka",
+      "flag": "🇱🇰",
+      "currency": "LKR",
+      "tier": 2,
+      "estimated_rate": 0.36,
+      "last_updated": "2024-01-01",
+      "source_url": "https://www.ird.gov.lk/"
+    },
+    {
+      "iso": "NP",
+      "name": "Nepal",
+      "flag": "🇳🇵",
+      "currency": "NPR",
+      "tier": 2,
+      "estimated_rate": 0.36,
+      "last_updated": "2024-01-01",
+      "source_url": "https://ird.gov.np/"
+    },
+    {
+      "iso": "MC",
+      "name": "Monaco",
+      "flag": "🇲🇨",
+      "currency": "EUR",
+      "tier": 2,
+      "estimated_rate": 0.00,
+      "last_updated": "2024-01-01",
+      "source_url": "https://en.gouv.mc/"
+    }
+  ]
+}
