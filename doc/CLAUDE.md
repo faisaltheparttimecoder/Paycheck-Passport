@@ -1,6 +1,6 @@
 # Paycheck Passport
 
-> "Roughly, how much would I take home if I moved to ___?"
+> "Roughly, how much would I take home if I moved to \_\_\_?"
 
 A static, client-side salary-to-take-home comparison tool covering ~30 countries accurately and ~170 more roughly. Hosted on GitHub Pages. No backend, no accounts, no tracking.
 
@@ -28,7 +28,7 @@ Keep it boring. GitHub Pages is a static host; do not introduce anything that re
 - **Styling:** plain CSS with custom properties for theming. Tailwind is acceptable if added via the standalone CLI (no Node runtime needed at view time). Pick one and stick to it.
 - **Charts/maps (optional):** prefer lightweight, dependency-free options. For a world map, an inline SVG with country paths beats any charting library. For bar charts, hand-rolled SVG or `<progress>`-like divs.
 - **Data:** static JSON files in `/data/`. No database, no API at runtime except for currency rates (and even that can be a daily-refreshed static file).
-- **Currency conversion:** ship a `rates.json` updated daily by a GitHub Action against `frankfurter.app` or `exchangerate.host`. Falling back to a stale rate is fine; failing closed is not — always show *something* with a timestamp.
+- **Currency conversion:** ship a `rates.json` updated daily by a GitHub Action against `frankfurter.app` or `exchangerate.host`. Falling back to a stale rate is fine; failing closed is not — always show _something_ with a timestamp.
 
 ---
 

@@ -9,9 +9,9 @@
  * could be added later for visual country selection.
  */
 export function initMap() {
-  // Placeholder for future implementation
-  // Could use an inline SVG with country paths
-  // that highlight selected countries
+    // Placeholder for future implementation
+    // Could use an inline SVG with country paths
+    // that highlight selected countries
 }
 
 /**
@@ -19,5 +19,5 @@ export function initMap() {
  * @param {Array} countryCodes - ISO codes of countries to highlight
  */
 export function highlightCountries(countryCodes) {
-  // Placeholder
+    // Placeholder
 }

@@ -11,21 +11,21 @@ import { formatCurrency, formatPercent } from '../lib/currency.js';
  * @param {string} displayCurrency - Currency to display amounts in
  */
 export function renderResults(results, displayCurrency) {
-  const container = document.getElementById('results');
-  const grid = container.querySelector('.results-grid');
-  
-  if (!results || results.length === 0) {
-    container.classList.add('hidden');
-    return;
-  }
-  
-  container.classList.remove('hidden');
-  grid.innerHTML = '';
-  
-  results.forEach((result, index) => {
-    const card = createResultCard(result, displayCurrency, index === 0);
-    grid.appendChild(card);
-  });
+    const container = document.getElementById('results');
+    const grid = container.querySelector('.results-grid');
+
+    if (!results || results.length === 0) {
+        container.classList.add('hidden');
+        return;
+    }
+
+    container.classList.remove('hidden');
+    grid.innerHTML = '';
+
+    results.forEach((result, index) => {
+        const card = createResultCard(result, displayCurrency, index === 0);
+        grid.appendChild(card);
+    });
 }
 
 /**
@@ -36,14 +36,14 @@ export function renderResults(results, displayCurrency) {
  * @returns {HTMLElement} Card element
  */
 function createResultCard(result, displayCurrency, isFrom) {
-  const card = document.createElement('article');
-  card.className = `result-card${isFrom ? ' from-country' : ''}`;
-  
-  const { country, calculation, convertedNet } = result;
-  const displayNet = convertedNet || calculation.net;
-  const monthlyNet = displayNet / 12;
-  
-  card.innerHTML = `
+    const card = document.createElement('article');
+    card.className = `result-card${isFrom ? ' from-country' : ''}`;
+
+    const { country, calculation, convertedNet } = result;
+    const displayNet = convertedNet || calculation.net;
+    const monthlyNet = displayNet / 12;
+
+    card.innerHTML = `
     <header class="result-header">
       <div>
         <span class="country-flag">${country.flag}</span>
@@ -76,18 +76,26 @@ function createResultCard(result, displayCurrency, isFrom) {
           <span class="breakdown-label">Income tax</span>
           <span class="breakdown-value negative">−${formatCurrency(calculation.income_tax, country.currency)}</span>
         </div>
-        ${calculation.social_security_breakdown.map(item => `
+        ${calculation.social_security_breakdown
+            .map(
+                (item) => `
           <div class="breakdown-row">
             <span class="breakdown-label">${item.name}</span>
             <span class="breakdown-value negative">−${formatCurrency(item.amount, country.currency)}</span>
           </div>
-        `).join('')}
-        ${calculation.regional_tax > 0 ? `
+        `,
+            )
+            .join('')}
+        ${
+            calculation.regional_tax > 0
+                ? `
           <div class="breakdown-row">
             <span class="breakdown-label">Regional/State tax</span>
             <span class="breakdown-value negative">−${formatCurrency(calculation.regional_tax, country.currency)}</span>
           </div>
-        ` : ''}
+        `
+                : ''
+        }
         <div class="breakdown-row total">
           <span class="breakdown-label">Net take-home</span>
           <span class="breakdown-value">${formatCurrency(calculation.net, country.currency)}</span>
@@ -105,15 +113,15 @@ function createResultCard(result, displayCurrency, isFrom) {
       </div>
     </footer>
   `;
-  
-  return card;
+
+    return card;
 }
 
 /**
  * Clear results display
  */
 export function clearResults() {
-  const container = document.getElementById('results');
-  container.classList.add('hidden');
-  container.querySelector('.results-grid').innerHTML = '';
+    const container = document.getElementById('results');
+    container.classList.add('hidden');
+    container.querySelector('.results-grid').innerHTML = '';
 }

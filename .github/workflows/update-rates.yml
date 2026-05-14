@@ -1,52 +1,72 @@
 name: Update Exchange Rates
 
 on:
-  schedule:
-    # Run daily at 6 AM UTC
-    - cron: '0 6 * * *'
-  workflow_dispatch: # Allow manual trigger
+    schedule:
+        # Run daily at 6 AM UTC
+        - cron: '0 6 * * *'
+    workflow_dispatch: # Allow manual trigger
 
 jobs:
-  update-rates:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      
-      - name: Fetch latest exchange rates
-        run: |
-          # Fetch rates from frankfurter.app (free, no API key required)
-          curl -s "https://api.frankfurter.app/latest?from=EUR" > /tmp/rates_raw.json
-          
-          # Transform to our format
-          node -e "
-            const raw = require('/tmp/rates_raw.json');
-            const rates = { EUR: 1, ...raw.rates };
-            const output = {
-              base: 'EUR',
-              date: raw.date,
-              rates: rates,
-              source: 'frankfurter.app',
-              note: 'Rates are approximate and updated daily. For informational purposes only.'
-            };
-            console.log(JSON.stringify(output, null, 2));
-          " > data/rates.json
-      
-      - name: Check for changes
-        id: check
-        run: |
-          if git diff --quiet data/rates.json; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "changed=true" >> $GITHUB_OUTPUT
-          fi
-      
-      - name: Commit and push if changed
-        if: steps.check.outputs.changed == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/rates.json
-          git commit -m "chore: update exchange rates [$(date +%Y-%m-%d)]"
-          git push
+    update-rates:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Fetch latest exchange rates
+              run: |
+                  # Fetch rates from frankfurter.app (free, no API key required)
+                  # API returns array format: [{"date":"...","base":"EUR","quote":"USD","rate":1.17}, ...]
+                  curl -s "https://api.frankfurter.app/v1/latest" > /tmp/rates_raw.json
+
+                  # Transform array format to our object format
+                  node -e "
+                    const fs = require('fs');
+                    const raw = JSON.parse(fs.readFileSync('/tmp/rates_raw.json', 'utf8'));
+                    
+                    // Build rates object from array
+                    const rates = { EUR: 1.0 };
+                    let date = '';
+                    
+                    if (Array.isArray(raw)) {
+                      // New array format
+                      raw.forEach(item => {
+                        if (item.quote && item.rate) {
+                          rates[item.quote] = item.rate;
+                        }
+                        if (item.date) date = item.date;
+                      });
+                    } else if (raw.rates) {
+                      // Old object format fallback
+                      Object.assign(rates, raw.rates);
+                      date = raw.date;
+                    }
+                    
+                    const output = {
+                      base: 'EUR',
+                      date: date,
+                      rates: rates,
+                      source: 'frankfurter.app',
+                      note: 'Rates are approximate and updated daily. For informational purposes only.'
+                    };
+                    console.log(JSON.stringify(output, null, 2));
+                  " > data/rates.json
+
+            - name: Check for changes
+              id: check
+              run: |
+                  if git diff --quiet data/rates.json; then
+                    echo "changed=false" >> $GITHUB_OUTPUT
+                  else
+                    echo "changed=true" >> $GITHUB_OUTPUT
+                  fi
+
+            - name: Commit and push if changed
+              if: steps.check.outputs.changed == 'true'
+              run: |
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git add data/rates.json
+                  git commit -m "chore: update exchange rates [$(date +%Y-%m-%d)]"
+                  git push
