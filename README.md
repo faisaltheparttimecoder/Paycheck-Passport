@@ -10,7 +10,7 @@
 
 ---
 
-\_"Roughly, how much would I take home if I moved to _\_\_?"_
+_"Roughly, how much would I take home if I moved to \_\_\_?"_
 
 A static, client-side salary-to-take-home comparison tool covering ~30 countries accurately and ~40 more roughly. No backend, no accounts, no tracking.
 
