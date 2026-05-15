@@ -22,14 +22,21 @@ jobs:
                   # Fetch rates from frankfurter.app (free, no API key required)
                   curl -sf "https://api.frankfurter.dev/v2/rates" > /tmp/rates_raw.json
 
-                  # Transform to our format (add EUR base rate + metadata)
+                  # Transform array format to our object format
+                  # v2 API returns: [{"date":"...","base":"EUR","quote":"USD","rate":1.17}, ...]
                   node -e "
                     const fs = require('fs');
                     const raw = JSON.parse(fs.readFileSync('/tmp/rates_raw.json', 'utf8'));
+                    const rates = { EUR: 1.0 };
+                    let date = '';
+                    raw.forEach(item => {
+                      rates[item.quote] = item.rate;
+                      if (item.date) date = item.date;
+                    });
                     const output = {
                       base: 'EUR',
-                      date: raw.date,
-                      rates: { EUR: 1.0, ...raw.rates },
+                      date: date,
+                      rates: rates,
                       source: 'frankfurter.app',
                       note: 'Rates are approximate and updated daily. For informational purposes only.'
                     };
